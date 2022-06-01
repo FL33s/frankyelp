@@ -87,7 +87,9 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 app.use(flash());
-app.use(helmet());
+// app.use(helmet());
+
+
 
 const scriptSrcUrls = [
     "https://stackpath.bootstrapcdn.com/",
@@ -115,6 +117,8 @@ const connectSrcUrls = [
 
 ];
 
+// app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}));
+
 const fontSrcUrls = [];
 app.use(
     helmet.contentSecurityPolicy({
@@ -123,11 +127,11 @@ app.use(
             connectSrc: ["'self'", ...connectSrcUrls],
             scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
             styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
-            workerSrc: ["'self'", "blob:"],
+            workerSrc: ["'self'"],
             objectSrc: [],
             imgSrc: [
                 "'self'",
-                "'blob'",
+                // "'blob'",
                 "data:",
                 "https://res.cloudinary.com/dllqasrlk/",
                 "https://images.unsplash.com/",
