@@ -1,13 +1,11 @@
-
-const mapboxgl = require('mapbox-gl');
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiZmw5NjAiLCJhIjoiY2wzbmR4YnRnMDF4aDNjdDY4NTd0Ynl4MyJ9.Ra-u1Exd6hw5vJ89O7xIaA';
+mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
-container: 'map', // container ID
-style: 'mapbox://styles/mapbox/streets-v11', // style URL
-center: [-74.5, 40], // starting position [lng, lat]
-zoom: 9 // starting zoom
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+    center: campground.geometry.coordinates, // starting position [lng, lat]
+    zoom: 10 // starting zoom
 });
+
 map.addControl(new mapboxgl.NavigationControl());
 
 
