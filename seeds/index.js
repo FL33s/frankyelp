@@ -15,9 +15,9 @@ mongoose.connect('mongodb://127.0.0.1/yelp-camp', {
     // useFindAndModify: false
 
 });
-
 // Logic that checks whether or not there is an error connecting our to the database.
 const db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
     console.log('Database connected');
